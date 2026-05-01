@@ -194,3 +194,42 @@ console.log("\n=== TESTE FINAL ETAPA 6 ===\n");
 console.log("Percentual de livros lidos:", percentualLidos());
 console.log("Media das avaliacoes:", mediaAvaliacoes());
 console.log("Total de paginas lidas:", totalPaginasLidas());
+
+// Etapa 7 — Classificação por década
+
+function exibirPorDecada(): void {
+    // Criar um array com as decadas presentes na lista (sem repetir)
+    const decadasEncontradas: number[] = [];
+    
+    anos.forEach(ano => {
+        const decada = Math.floor(ano / 10) * 10;
+        if (!decadasEncontradas.includes(decada)) {
+            decadasEncontradas.push(decada);
+        }
+    });
+
+    // Ordenar as decadas (da mais antiga para a mais nova)
+    decadasEncontradas.sort((a, b) => a - b);
+
+    // Listar os livros de cada decada encontrada
+    decadasEncontradas.forEach(decada => {
+        console.log("Decada de " + decada + ":");
+        
+        // Filtro dos titulos onde o ano correspondente pertence a decada atual
+        const livrosDaDecada = titulos.filter((_, i) => {
+            const decadaDoLivro = Math.floor(anos[i]! / 10) * 10;
+            return decadaDoLivro === decada;
+        });
+
+        livrosDaDecada.forEach(livro => {
+            console.log(" - " + livro + "\n");
+        });
+    });
+}
+
+// === VALIDACAO DA ETAPA 7 ===
+console.log("\n=== TESTE DE CLASSIFICACAO POR DECADA ===\n");
+
+
+exibirPorDecada();
+
