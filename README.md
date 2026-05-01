@@ -88,3 +88,15 @@ Implementação da função marcarComoLido que utiliza estruturas condicionais (
 Utilização do método avançado de array .filter() para extrair dinamicamente os títulos dos livros com base em seu estado atual (Lidos ou Pendentes).
 
 Manutenção da sincronia entre os arrays de títulos, status de leitura e avaliações através do controle de índices.
+
+Etapa 6 — Estatísticas e Programação Funcional
+
+Nesta etapa final, implementei a extração de métricas de desempenho da biblioteca, consolidando o uso de métodos avançados de manipulação de arrays
+
+Utilização do método .reduce() para realizar a acumulação de valores (páginas e avaliações) de forma funcional, utilizando o parâmetro acc (acumulador) para processar os dados sem a necessidade de variáveis globais de controle.
+
+Aplicação de filtros internos no reduce e no filter para garantir que as estatísticas (como média de notas) considerem apenas os livros efetivamente lidos e avaliados.
+
+Uso do método .toFixed(2) para garantir que as saídas numéricas (médias e percentuais) sigam o padrão de precisão técnica necessário para a interface do usuário.
+
+Manipulação de múltiplos arrays paralelos através de índices para correlacionar títulos, status de leitura e contagem de páginas em uma única operação.

@@ -153,3 +153,44 @@ marcarComoLido(1, 10);
 
 console.log("Livros lidos:", listarLidos());
 console.log("Livros pendentes:", listarPendentes());
+
+//  Etapa 6 — Estatísticas
+
+// Percentual de livros lidos
+function percentualLidos(): string {
+    const total = titulos.length;
+    const totalLidos = lido.filter(status => status === true).length;
+    
+    const percentual = (totalLidos / total) * 100;
+    return percentual.toFixed(2) + "%";
+}
+
+// Media de avaliacoes (Apenas dos livros ja lidos)
+function mediaAvaliacoes(): string {
+    // Filtro apenas as avaliacoes que sao maiores que 0 (ou seja, ja avaliadas)
+    const notasLidos = avaliacoes.filter(nota => nota > 0);
+    
+    if (notasLidos.length === 0) return "0.00";
+
+    // Soma das notas usando o REDUCE e dividimos pelo total de notas
+    const soma = notasLidos.reduce((acc, nota) => acc + nota, 0);
+    const media = soma / notasLidos.length;
+    
+    return media.toFixed(2);
+}
+
+// Total de paginas lidas
+function totalPaginasLidas(): number {
+    // O REDUCE para somar apenas as paginas onde o indice correspondente esta LIDO
+    return paginas.reduce((acc, numPaginas, i) => {
+        if (lido[i]) {
+            return acc + numPaginas;
+        }
+        return acc;
+    }, 0);
+}
+
+console.log("\n=== TESTE FINAL ETAPA 6 ===\n");
+console.log("Percentual de livros lidos:", percentualLidos());
+console.log("Media das avaliacoes:", mediaAvaliacoes());
+console.log("Total de paginas lidas:", totalPaginasLidas());
