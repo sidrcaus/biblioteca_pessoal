@@ -71,7 +71,7 @@ Realizado testes manuais adicionando novos volumes e removendo itens específico
 
 -git commit -m "nome do commit que deseja colocar, importante deixar as aspas"
 
--git push origin "nome da branch crida sem as aspas" (Importante somente para o primeiro commit da branch precisa do origin, após ele pode se manter somente um git push)
+-git push origin "nome da branch crida sem as aspas" (Para finalizar o processo, assim enviando para o servidor no caso repositorio do GitHub)
 
 -git status (Para confirmar tudo e ver se enviou certo).
 
@@ -79,3 +79,12 @@ Etapa 4 — Busca e filtros
 
 Criado um objeto com os dados de ambos os arrays utilizando "map" e filtrado pelo nome do autor
 
+Etapa 5 - Marcar como lido
+
+Nesta etapa, implementei a lógica de gerenciamento de leitura dos livros, focando em estruturas de controle e integridade de dados.
+
+Implementação da função marcarComoLido que utiliza estruturas condicionais (if/else) para validar a entrada de dados. A função garante que apenas avaliações entre 1 e 5 sejam aceitas, prevenindo inconsistências no sistema.
+
+Utilização do método avançado de array .filter() para extrair dinamicamente os títulos dos livros com base em seu estado atual (Lidos ou Pendentes).
+
+Manutenção da sincronia entre os arrays de títulos, status de leitura e avaliações através do controle de índices.

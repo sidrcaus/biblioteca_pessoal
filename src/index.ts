@@ -89,7 +89,7 @@ console.log("\n=== TESTANDO REMOVER LIVRO ===");
 // Em arrays, a contagem começa no 0.
 removerLivro(1); 
 
-console.log("\n=== RESULTADO FINAL DA BIBLIOTECA ===");
+console.log("\n=== RESULTADO FINAL DA BIBLIOTECA ===\n");
 // Chamamos a função de exibição para validar visualmente se as mudanças ocorreram
 exibirBiblioteca();
 
@@ -107,3 +107,49 @@ function listarPorAutor(autorBusca: string): string[] {
         // Retorna apenas a string do título 
         .map(item => item.titulo);
 }
+
+// === TESTES DE VALIDAÇÃO DA ETAPA 4 ===
+
+const resultadoAutor = listarPorAutor("Paulo Coelho"); 
+console.log("\nLivros deste autor:", resultadoAutor); 
+
+// Etapa 5 — Marcar como lido
+
+function marcarComoLido(indice: number, avaliacao: number): void {
+    // 1. Validacao do indice (Aula 04)
+    if (indice < 0 || indice >= titulos.length) {
+        console.log("Erro: Indice do livro nao encontrado.");
+        return; 
+    }
+
+    // Validacao da Nota, deve ser entre 1 e 5 
+    if (avaliacao >= 1 && avaliacao <= 5) {
+        lido[indice] = true;
+        avaliacoes[indice] = avaliacao;
+        console.log("Sucesso: O livro " + titulos[indice] + " foi marcado como lido com nota " + avaliacao);
+    } else {
+        console.log("Erro: A avaliacao deve ser um numero entre 1 e 5.");
+    }
+}
+
+// Listar Lidos 
+function listarLidos(): string[] {
+    return titulos.filter((_, i) => lido[i] === true);
+}
+
+// Listar Pendentes 
+function listarPendentes(): string[] {
+    return titulos.filter((_, i) => lido[i] === false);
+}
+
+
+// === TESTES DE VALIDAÇÃO DA ETAPA 5 ===
+console.log("\n=== TESTE ETAPA 5 ===\n");
+
+// Teste de sucesso
+marcarComoLido(0, 4); 
+// Teste de erro (nota fora do limite)
+marcarComoLido(1, 10); 
+
+console.log("Livros lidos:", listarLidos());
+console.log("Livros pendentes:", listarPendentes());
