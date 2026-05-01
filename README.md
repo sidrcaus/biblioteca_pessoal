@@ -1,3 +1,5 @@
+Aluno: Sidnei Rogerio Caus
+
 1° Etapa - inicio do projeto
 
 Guia de como iniciar um projeto.
@@ -100,3 +102,23 @@ Aplicação de filtros internos no reduce e no filter para garantir que as estat
 Uso do método .toFixed(2) para garantir que as saídas numéricas (médias e percentuais) sigam o padrão de precisão técnica necessário para a interface do usuário.
 
 Manipulação de múltiplos arrays paralelos através de índices para correlacionar títulos, status de leitura e contagem de páginas em uma única operação.
+
+Etapa 7 — Classificação e Agrupamento por Década
+
+Esta etapa foca na organização cronológica do acervo, transformando anos específicos em categorias temporais (décadas) através de processamento aritmético
+
+Aplicação do método Math.floor() para normalizar os anos. O cálculo (dividir por 10, arredondar e multiplicar por 10) permite isolar a década correspondente de forma eficiente.
+
+Implementação de um fluxo para identificar décadas únicas presentes nos dados, utilizando o método .includes() para evitar duplicidade na interface de saída.
+
+Uso do método .sort() para exibição cronológica e filtragem cruzada entre os arrays de títulos e anos, garantindo que cada livro seja vinculado corretamente ao seu período histórico.
+
+Etapa 8 — Demonstração Final do Sistema
+
+A etapa final integra todas as funcionalidades desenvolvidas em um fluxo de execução único, validando a integridade do sistema de ponta a ponta:
+
+Implementação de uma rotina mestre que executa sequencialmente as operações de listagem, filtragem por autor, atualização de status de leitura e geração de métricas.
+
+Utilização de Template Literals e caracteres de escape para formatar um relatório visualmente organizado, facilitando a leitura de dados dinâmicos e resultados de funções.
+
+Demonstração prática de que os arrays paralelos permanecem sincronizados após múltiplas manipulações, consolidando o aprendizado de lógica de programação e manipulação de arrays.

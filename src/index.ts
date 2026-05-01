@@ -233,3 +233,40 @@ console.log("\n=== TESTE DE CLASSIFICACAO POR DECADA ===\n");
 
 exibirPorDecada();
 
+// === DEMONSTRACAO FINAL (ETAPA 8) ===
+
+function demonstracaoFinal(): void {
+    console.log("=========================================");
+    console.log("       SISTEMA DE GESTAO DE LIVROS       ");
+    console.log("=========================================\n");
+
+    
+    console.log("=== LISTA COMPLETA ===");
+    exibirBiblioteca();
+
+    console.log(`\n=== FILTRO: Paulo Coelho ===`);
+    const livrosAutor = listarPorAutor("Paulo Coelho");
+    console.log(`Livros encontrados: ${livrosAutor.length > 0 ? livrosAutor : "Nenhum encontrado"}`);
+
+    console.log("\n=== ATUALIZANDO STATUS ===");
+    marcarComoLido(0, 5); 
+    
+    console.log(`Lidos: ${listarLidos()}`);
+    console.log(`Pendentes: ${listarPendentes()}`);
+
+
+    console.log("\n=== ESTATISTICAS DE LEITURA ===");
+    console.log(`Percentual lido: ${percentualLidos()}`);
+    console.log(`Media de notas: ${mediaAvaliacoes()}`);
+    console.log(`Total paginas lidas: ${totalPaginasLidas()}`);
+
+
+    console.log("\n=== ACERVO POR DECADA ===");
+    exibirPorDecada();
+
+    console.log("\n=========================================");
+    console.log("       FIM DA DEMONSTRACAO FINAL        ");
+    console.log("=========================================");
+}
+
+demonstracaoFinal();
