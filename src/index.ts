@@ -92,3 +92,18 @@ removerLivro(1);
 console.log("\n=== RESULTADO FINAL DA BIBLIOTECA ===");
 // Chamamos a função de exibição para validar visualmente se as mudanças ocorreram
 exibirBiblioteca();
+
+//  Etapa 4 — Busca e filtros
+
+function listarPorAutor(autorBusca: string): string[] {
+    return autores
+        // Criado um objeto com os dados de ambos os arrays 
+        .map((autor, i) => ({ 
+            nome: autor, 
+            titulo: titulos[i]! 
+        })) 
+        // Filtrar pelo nome do autor 
+        .filter(item => item.nome.toLowerCase() === autorBusca.toLowerCase())
+        // Retorna apenas a string do título 
+        .map(item => item.titulo);
+}

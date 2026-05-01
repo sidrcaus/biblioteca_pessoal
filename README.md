@@ -62,9 +62,20 @@ Testes de Unidade
 Realizado testes manuais adicionando novos volumes e removendo itens específicos para validar se a lista exibida no terminal reflete corretamente as alterações em tempo real.
 
 "Iniciando adicionar pelo terminal"
+
 -git status (Ver oq está em vermelho é oque se tem de novo no codigo sem estar comitado)
+
 -git checkout -b "nome da branch sem as aspas" (Fator importante para não colocar direto na master PS:Fez errados os processos anteriores, mas o Filho ajudou a partir daqui  kkkk )
--git add src/index.ts (o "src/index.ts" altera de acordo com o arquivo q deseja colocar em especifico caso queira todos q foram alterados basta colocar git add.)
+
+-git add src/index.ts (o "src/index.ts" altera de acordo com o arquivo q deseja colocar em especifico caso queira todos q foram alterados basta colocar git add . depois confirmar com git status para verificar se deu certo.)
+
 -git commit -m "nome do commit que deseja colocar, importante deixar as aspas"
+
 -git push origin "nome da branch crida sem as aspas" (Importante somente para o primeiro commit da branch precisa do origin, após ele pode se manter somente um git push)
--git status (Para confirmar tudo e ver se enviou certo)
+
+-git status (Para confirmar tudo e ver se enviou certo).
+
+Etapa 4 — Busca e filtros
+
+Criado um objeto com os dados de ambos os arrays utilizando "map" e filtrado pelo nome do autor
+
