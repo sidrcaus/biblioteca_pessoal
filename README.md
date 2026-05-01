@@ -77,6 +77,14 @@ Realizado testes manuais adicionando novos volumes e removendo itens específico
 
 -git status (Para confirmar tudo e ver se enviou certo).
 
+Após realizar tudo para juntar na Main/Master precisa primeiro acessar de volta a main.
+
+-git checkout main acessou ela de volta
+
+-git pull origin "nome da branch sem as aspas"
+
+-Agora só fazer o processo de commit novamente para subir do seu local para o repository
+
 Etapa 4 — Busca e filtros
 
 Criado um objeto com os dados de ambos os arrays utilizando "map" e filtrado pelo nome do autor
@@ -122,3 +130,4 @@ Implementação de uma rotina mestre que executa sequencialmente as operações 
 Utilização de Template Literals e caracteres de escape para formatar um relatório visualmente organizado, facilitando a leitura de dados dinâmicos e resultados de funções.
 
 Demonstração prática de que os arrays paralelos permanecem sincronizados após múltiplas manipulações, consolidando o aprendizado de lógica de programação e manipulação de arrays.
+
