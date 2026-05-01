@@ -36,3 +36,59 @@ function exibirBiblioteca(): void {
 
 // Chamada da função para testar no terminal CMD
 exibirBiblioteca();
+
+// Etapa 3 — Cadastro e remoção
+
+// Função para adicionar um novo livro
+function adicionarLivro(titulo: string, autor: string, ano: number, numPaginas: number): void {
+    // Validação com 'if': ano e páginas devem ser positivos
+    if (ano > 0 && numPaginas > 0) {
+        titulos.push(titulo);
+        autores.push(autor);
+        anos.push(ano);
+        paginas.push(numPaginas);
+        
+        // Regra do projeto: novos livros começam como não lidos (false) e nota zero
+        lido.push(false);
+        avaliacoes.push(0);
+        
+        console.log(`Sucesso: Livro "${titulo}" adicionado!`);
+    } else {
+        console.log("Erro: O ano e o número de páginas precisam ser maiores que zero.");
+    }
+}
+
+// Função para remover um livro pelo índice
+function removerLivro(indice: number): void {
+    // Validação de segurança: verifica se o índice realmente existe
+    if (indice >= 0 && indice < titulos.length) {
+        // O método .splice(indice, 1) remove 1 item na posição indicada
+        // Como são arrays paralelos, removemos de todos ao mesmo tempo
+        titulos.splice(indice, 1);
+        autores.splice(indice, 1);
+        anos.splice(indice, 1);
+        paginas.splice(indice, 1);
+        lido.splice(indice, 1);
+        avaliacoes.splice(indice, 1);
+        
+        console.log("Sucesso: Livro removido da biblioteca.");
+    } else {
+        console.log("Erro: Não existe nenhum livro no índice informado.");
+    }
+}
+
+//  TESTES DE VALIDAÇÃO (Etapa 3) 
+
+console.log("\n=== TESTANDO ADICIONAR LIVROS ===");
+// Adicionando 2 livros conforme solicitado
+adicionarLivro("O Alquimista", "Paulo Coelho", 1988, 208);
+adicionarLivro("Sapiens", "Yuval Noah Harari", 2011, 464);
+
+console.log("\n=== TESTANDO REMOVER LIVRO ===");
+// Removendo 1 livro. Vamos remover o índice 2 (que originalmente é o livro "1984")
+// Em arrays, a contagem começa no 0.
+removerLivro(1); 
+
+console.log("\n=== RESULTADO FINAL DA BIBLIOTECA ===");
+// Chamamos a função de exibição para validar visualmente se as mudanças ocorreram
+exibirBiblioteca();
